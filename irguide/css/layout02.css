@@ -1,0 +1,36 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+ul,
+ol {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+body {
+  font-family: "Noto Sans KR";
+}
+header {
+  display: flex;
+  justify-content: space-between;
+}
+.gnb {
+  display: flex;
+  text-align: center;
+}
+.depth01 {
+  display: flex;
+  height: 100px;
+  justify-content: center;
+  align-items: center;
+  margin-left: 30px;
+  margin-right: 30px;
+}
+/* a태그는 부모로부터 color값을 상속받지 않는다. 왜 그런지 묻지마라  */
+.depth02 {
+  font-size: 14px;
+  color: #999;
+}
