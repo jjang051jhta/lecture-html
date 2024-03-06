@@ -17,11 +17,11 @@ header {
   display: flex;
   justify-content: space-between;
 }
-.gnb {
+header .gnb {
   display: flex;
   text-align: center;
 }
-.depth01 {
+header .gnb .depth01 {
   display: flex;
   height: 100px;
   justify-content: center;
@@ -30,7 +30,11 @@ header {
   margin-right: 30px;
 }
 /* a태그는 부모로부터 color값을 상속받지 않는다. 왜 그런지 묻지마라  */
-.depth02 {
+header .gnb .depth02 {
   font-size: 14px;
   color: #999;
+}
+
+header .gnb .depth02 a:hover {
+  color: #111;
 }
