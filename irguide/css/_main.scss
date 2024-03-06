@@ -1,0 +1,54 @@
+.main-visual {
+  overflow: hidden;
+  height: 100vh;
+  ul {
+    li {
+      display: flex;
+      justify-content: space-evenly;
+      align-items: center;
+      background-color: #fff;
+      height: 100vh;
+
+      .img-box {
+        img {
+          height: 500px;
+        }
+      }
+      .txt-box {
+        .title {
+          font-size: 48px;
+          font-weight: 900;
+          margin-bottom: 50px;
+        }
+        .txt {
+          font-size: 20px;
+          font-weight: 500;
+          span {
+            color: $main-color;
+          }
+        }
+      }
+    }
+  }
+}
+
+.btn-top {
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: $main-color;
+  color: #fff;
+  border: none;
+  position: fixed;
+  right: 50px;
+  bottom: -150px;
+  z-index: 98;
+  transition: all 0.25s ease;
+  //scroll의 위치값이 300보다 커지면 show라는 클래스를 달아서
+  // bottom을 원래 위치인 50으로 옮겨놓기...
+  &.show {
+    bottom: 50px;
+  }
+}

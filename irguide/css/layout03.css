@@ -1,10 +1,50 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+body {
+  font-family: "Noto Sans KR";
+  color: #111;
+  font-size: 16px;
+  min-height: 2000px;
+}
+
 header {
+  position: fixed;
+  width: 100%;
+  z-index: 99;
   display: flex;
   justify-content: space-between;
+  height: 100px;
+  background-color: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(10px);
+  transition: all 0.5s ease;
+}
+header.scroll {
+  height: 80px;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+}
+header.scroll .gnb .depth01 {
+  height: 80px;
 }
 header .gnb {
   display: flex;
   text-align: center;
+}
+header .gnb li:hover .depth02 {
+  pointer-events: auto;
+  opacity: 1;
 }
 header .gnb .depth01 {
   display: flex;
@@ -13,18 +53,71 @@ header .gnb .depth01 {
   align-items: center;
   margin-left: 30px;
   margin-right: 30px;
-  color: #ffcc00;
+  color: #e60012;
+  transition: all 0.5s ease;
 }
 header .gnb .depth02 {
+  opacity: 0;
   text-align: center;
-}
-header .gnb .depth02 li {
-  margin-top: 10px;
+  background-color: #e60012;
+  position: absolute;
+  pointer-events: none;
+  backdrop-filter: blur(10px);
+  padding: 20px;
+  border-top-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  transition: all 0.5s ease;
 }
 header .gnb .depth02 li a {
-  color: #ffcc00;
+  color: #fff;
 }
 header .gnb .depth02 li a:hover {
   color: #111;
   text-decoration: underline;
+}
+
+.main-visual {
+  overflow: hidden;
+  height: 100vh;
+}
+.main-visual ul li {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  background-color: #fff;
+  height: 100vh;
+}
+.main-visual ul li .img-box img {
+  height: 500px;
+}
+.main-visual ul li .txt-box .title {
+  font-size: 48px;
+  font-weight: 900;
+  margin-bottom: 50px;
+}
+.main-visual ul li .txt-box .txt {
+  font-size: 20px;
+  font-weight: 500;
+}
+.main-visual ul li .txt-box .txt span {
+  color: #e60012;
+}
+
+.btn-top {
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #e60012;
+  color: #fff;
+  border: none;
+  position: fixed;
+  right: 50px;
+  bottom: -150px;
+  z-index: 98;
+  transition: all 0.25s ease;
+}
+.btn-top.show {
+  bottom: 50px;
 }

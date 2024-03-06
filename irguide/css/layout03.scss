@@ -1,31 +1,4 @@
 @import "vars";
-header {
-  display: flex;
-  justify-content: space-between;
-  .gnb {
-    display: flex;
-    text-align: center;
-    .depth01 {
-      display: flex;
-      height: 100px;
-      justify-content: center;
-      align-items: center;
-      margin-left: 30px;
-      margin-right: 30px;
-      color: $main-color;
-    }
-    .depth02 {
-      text-align: center;
-      li {
-        margin-top: 10px;
-        a {
-          color: $main-color;
-          &:hover {
-            color: #111;
-            text-decoration: underline;
-          }
-        }
-      }
-    }
-  }
-}
+@import "common";
+@import "header";
+@import "main";
