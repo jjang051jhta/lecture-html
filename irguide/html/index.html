@@ -83,7 +83,7 @@
         </li>
         <li class="swiper-slide">
           <div class="txt-box">
-            <p class="title">해상도의 혁신, 최고의 성능 <br />세계 최초 MP급 해상도</p>
+            <p class="title">해상도의 혁신, 최고의 성능 세계 최초 MP급 해상도</p>
             <p class="txt">
               Guide는 <span>전세계 적외선 열화상 <br />시장에서 Top2위</span>에 올랐습니다
             </p>
@@ -94,7 +94,7 @@
         </li>
         <li class="swiper-slide">
           <div class="txt-box">
-            <p class="title">지능형 장비 시대 안전을 위한 <br />산업용 안전펜스의 뛰어난 선택</p>
+            <p class="title">지능형 장비 시대 안전을 위한 산업용 안전펜스의 뛰어난 선택</p>
             <p class="txt">안전과 효율의 조화, <br />산업용 <span>지능형 안전펜스의 필수성</span></p>
           </div>
           <div class="img-box">
@@ -102,14 +102,34 @@
           </div>
         </li>
       </ul>
+      <div class="pagination"></div>
     </div>
     <button class="btn-top">TOP</button>
   </body>
   <!-- 자바스크립트는 interpreting(동시통역)  compile -->
   <script>
+    let jang = { name: "장성호", age: 20, major: { main: "컴퓨터", sub: "경영" } };
+    let lee = { name: "이석원", age: 25 };
+
+    console.log("이름 : " + jang["name"] + ",나이 : " + jang.age + ",전공 : " + jang.major.main);
+    let option = {
+      loop: true,
+      effect: "fade",
+    };
+    console.log(option.loop);
     const swiper = new Swiper("#main-visual", {
       loop: true,
       effect: "fade",
+      speed: 1000,
+      pagination: {
+        el: ".pagination",
+        clickable: true,
+      },
+      autoplay: {
+        delay: 3000,
+        //pauseOnMouseEnter: true,
+        //disableOnInteraction: false,
+      },
     });
 
     const header = document.querySelector("header");

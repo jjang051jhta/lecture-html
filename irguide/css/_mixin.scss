@@ -8,14 +8,30 @@
   $shadow: unquote($shadow);
   text-shadow: $shadow;
 }
-
-@mixin flex-center() {
+@mixin flex($position: center) {
+  @if $position == start {
+    justify-content: start;
+  } @else if $position == end {
+    justify-content: end;
+  } @else {
+    justify-content: center;
+  }
   display: flex;
-  justify-content: center;
   align-items: center;
 }
+
 @mixin ellipse() {
   white-space: nowrap;
   text-overflow: ellipsis;
   overflow: hidden;
+}
+
+@mixin multiEllipsis($line: 2, $lineHeight: 1.5) {
+  display: -webkit-box;
+  overflow: hidden;
+  line-height: $lineHeight;
+  height: $line * $lineHeight * 1em; //px은 절대 단위
+  -webkit-line-clamp: $line;
+  -webkit-box-orient: vertical;
+  word-break: break-all;
 }
