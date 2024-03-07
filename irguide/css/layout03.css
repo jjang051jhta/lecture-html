@@ -164,6 +164,19 @@ header .gnb .depth02 li a:hover {
   right: 20px;
 }
 
+.banner {
+  overflow: hidden;
+}
+.banner h2 {
+  margin-bottom: 50px;
+}
+.banner .container {
+  position: relative;
+}
+.banner .mask {
+  overflow: hidden;
+  padding: 30px;
+}
 .banner ul li {
   padding: 20px;
   border: 1px solid #ccc;
@@ -173,6 +186,20 @@ header .gnb .depth02 li a:hover {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  transition: all 0.25s ease;
+}
+.banner ul li .img-box {
+  overflow: hidden;
+}
+.banner ul li .img-box img {
+  transition: all 0.25s ease;
+}
+.banner ul li:hover {
+  transform: translateY(-20px);
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.25);
+}
+.banner ul li:hover .img-box img {
+  transform: scale(1.2);
 }
 .banner ul li h3 {
   font-size: 16px;
@@ -187,6 +214,27 @@ header .gnb .depth02 li a:hover {
 .banner ul li .bottom-info {
   display: flex;
   justify-content: space-between;
+}
+.banner button {
+  position: absolute;
+  top: 50%;
+  z-index: 2;
+  cursor: pointer;
+  display: flex;
+  background-color: #fff;
+  z-index: 2;
+  border-radius: 100px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
+}
+.banner button span {
+  font-size: 64px;
+  font-variation-settings: "FILL" 0, "wght" 200, "GRAD" 0, "opsz" 24;
+}
+.banner button.btn-prev {
+  left: -50px;
+}
+.banner button.btn-next {
+  right: -50px;
 }
 
 .btn-top {
