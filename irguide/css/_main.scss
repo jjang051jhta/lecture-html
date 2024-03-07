@@ -19,6 +19,8 @@
           font-size: 48px;
           font-weight: 900;
           margin-bottom: 50px;
+          width: 500px;
+          @include ellipse();
         }
         .txt {
           font-size: 20px;
@@ -35,9 +37,7 @@
 .btn-top {
   width: 50px;
   height: 50px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  @include flex-center();
   background-color: $main-color;
   color: #fff;
   border: none;
@@ -45,6 +45,10 @@
   right: 50px;
   bottom: -150px;
   z-index: 98;
+  font-weight: 700;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  @include longShadow(30, darken($main-color, 10));
   transition: all 0.25s ease;
   //scroll의 위치값이 300보다 커지면 show라는 클래스를 달아서
   // bottom을 원래 위치인 50으로 옮겨놓기...

@@ -17,8 +17,10 @@ header {
       }
     }
   }
-  &:hover {
-    //height: 300px;
+  //css는 형제 선택자, 자식 선택자는 있지만 부모선택자는 없음...
+  &.over {
+    height: 300px;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
   }
 
   .gnb {

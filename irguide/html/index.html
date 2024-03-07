@@ -74,10 +74,7 @@
       <ul class="swiper-wrapper">
         <li class="swiper-slide">
           <div class="txt-box">
-            <p class="title">
-              디자인과 안전의 완벽한 조화 <br />
-              뛰어난 디자인으로 안전을 완성
-            </p>
+            <p class="title">디자인과 안전의 완벽한 조화 뛰어난 디자인으로 안전을 완성</p>
             <p class="txt">세계 3대 디자인 어워드, <span>독일 2023 레드 닷 디자인 어워드 수상</span></p>
           </div>
           <div class="img-box">
@@ -106,20 +103,46 @@
         </li>
       </ul>
     </div>
-    <button class="btn-top">top</button>
+    <button class="btn-top">TOP</button>
   </body>
+  <!-- 자바스크립트는 interpreting(동시통역)  compile -->
   <script>
     const swiper = new Swiper("#main-visual", {
       loop: true,
       effect: "fade",
     });
+
     const header = document.querySelector("header");
+    const btnTop = document.querySelector(".btn-top");
+    const gnb = document.querySelector(".gnb");
+
+    gnb.addEventListener("mouseenter", function () {
+      //console.log("마우스 올라갔습니다.");
+      header.classList.add("over");
+    });
+
+    gnb.addEventListener("mouseleave", function () {
+      //console.log("마우스 내려갔습니다.");
+      header.classList.remove("over");
+    });
+
+    btnTop.addEventListener("click", function () {
+      window.scroll({
+        top: 0,
+        behavior: "smooth",
+      });
+    });
     document.addEventListener("scroll", function () {
       const scrollY = Math.floor(window.scrollY); // 변수
       if (scrollY > 0) {
         header.classList.add("scroll");
       } else {
         header.classList.remove("scroll");
+      }
+      if (scrollY > 300) {
+        btnTop.classList.add("show");
+      } else {
+        btnTop.classList.remove("show");
       }
     });
   </script>
