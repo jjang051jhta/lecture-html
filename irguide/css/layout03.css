@@ -298,3 +298,13 @@ header .gnb .depth02 li a:hover {
   height: 40px;
   padding: 0 20px;
 }
+.join .form-table td .input-box {
+  margin-top: 10px;
+}
+.join .btn {
+  height: 40px;
+  background-color: #111;
+  color: #fff;
+  padding: 0 20px;
+  vertical-align: top;
+}

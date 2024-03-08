@@ -84,7 +84,7 @@
         <div class="basic-info-box">
           <div class="table-box">
             <h3>기본정보</h3>
-            <form action="join-confirm.html" method="get">
+            <form action="join-confirm.html" method="get" id="join-form">
               <table class="form-table">
                 <colgroup>
                   <col style="width: 180px" />
@@ -119,16 +119,24 @@
                     <th><label for="postCode">주소</label></th>
                     <td>
                       <input type="text" name="postCode" placeholder="우편번호" id="postCode" readonly />
-                      <button type="button" id="btn-post">우편번호</button>
+                      <button type="button" id="btn-post" class="btn">우편번호</button>
+                      <div class="input-box">
+                        <input type="text" name="roadAddress" id="roadAddress" />
+                      </div>
+                      <div class="input-box">
+                        <input type="text" name="jibunAddress" id="jibunAddress" />
+                      </div>
+                      <div class="input-box">
+                        <input type="text" name="extraAddress" id="extraAddress" />
+                      </div>
                     </td>
                   </tr>
                 </tbody>
               </table>
               <input type="checkbox" name="agree" id="" value="true" />
               동의
-              <input type="radio" name="gender" value="male" />남자 <input type="radio" name="gender" value="female" />여자
 
-              <button>회원가입</button>
+              <div><button class="btn" id="btn-join">회원가입</button></div>
             </form>
           </div>
         </div>
@@ -148,6 +156,7 @@
     function searchPostCode() {
       new daum.Postcode({
         oncomplete: function (data) {
+          console.log(data);
           // 팝업에서 검색결과 항목을 클릭했을때 실행할 코드를 작성하는 부분.
 
           // 도로명 주소의 노출 규칙에 따라 주소를 표시한다.
@@ -171,8 +180,38 @@
 
           // 우편번호와 주소 정보를 해당 필드에 넣는다.
           document.getElementById("postCode").value = data.zonecode;
+          document.getElementById("roadAddress").value = roadAddr;
+          document.getElementById("jibunAddress").value = data.jibunAddress;
+
+          // 참고항목 문자열이 있을 경우 해당 필드에 넣는다.
+          if (roadAddr !== "") {
+            document.getElementById("extraAddress").value = extraRoadAddr;
+          } else {
+            document.getElementById("extraAddress").value = "";
+          }
         },
       }).open();
     }
+
+    //validation
+    const btnJoin = document.querySelector("#btn-join");
+    const joinForm = document.querySelector("#join-form");
+    const userId = document.querySelector("#user-id");
+    const postCode = document.querySelector("#postCode");
+
+    btnJoin.addEventListener("click", function (e) {
+      e.preventDefault();
+      if (userId.value === "") {
+        alert("아이디를 입력해 주세요.");
+        userId.focus();
+      } else if (postCode.value === "") {
+        alert("우편번호를 입력해 주세요.");
+        postCode.focus();
+      } else {
+        joinForm.submit();
+      }
+      //console.log(userId.value);
+      //joinForm.submit();
+    });
   </script>
 </html>
