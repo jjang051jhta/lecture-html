@@ -82,9 +82,10 @@
       <div class="container">
         <h2>회원가입</h2>
         <div class="basic-info-box">
-          <div class="table-box">
-            <h3>기본정보</h3>
-            <form action="join-confirm.html" method="get" id="join-form">
+          <form action="join-process.html">
+            <div class="table-box">
+              <h3>기본정보</h3>
+
               <table class="form-table">
                 <colgroup>
                   <col style="width: 180px" />
@@ -131,14 +132,81 @@
                       </div>
                     </td>
                   </tr>
+                  <tr>
+                    <th><label for="user-hp">휴대전화</label></th>
+                    <td>
+                      <select name="userHp" id="">
+                        <option value="010" selected>010</option>
+                        <option value="016">016</option>
+                        <option value="017">017</option>
+                        <option value="018">018</option>
+                        <option value="019">019</option>
+                      </select>
+                      <input type="text" name="userHpMiddle" class="short" />
+                      <input type="text" name="userHpLast" class="short" />
+                    </td>
+                  </tr>
                 </tbody>
               </table>
-              <input type="checkbox" name="agree" id="" value="true" />
-              동의
-
-              <div><button class="btn" id="btn-join">회원가입</button></div>
-            </form>
-          </div>
+            </div>
+            <div class="table-box">
+              <h3>추가정보</h3>
+              <table class="form-table">
+                <colgroup>
+                  <col style="width: 180px" />
+                  <col />
+                </colgroup>
+                <tbody>
+                  <tr>
+                    <th><label for="gender">성별</label></th>
+                    <td>
+                      <input type="radio" name="gender" value="male" />
+                      남자
+                      <input type="radio" name="gender" value="female" />
+                      여자
+                    </td>
+                  </tr>
+                  <tr>
+                    <th><label for="birth">생년월일</label></th>
+                    <td>
+                      <!-- prettier-ignore -->
+                      <input type="text" name="year" class="short" />년
+                      <!-- prettier-ignore -->
+                      <input type="text" name="month" class="short"  />월
+                      <!-- prettier-ignore -->
+                      <input type="text" name="date" class="short"  />일
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="table-box">
+              <h3>전체동의</h3>
+              <table class="form-table">
+                <colgroup>
+                  <col style="width: 180px" />
+                  <col />
+                </colgroup>
+                <tbody>
+                  <tr>
+                    <th>
+                      <input type="checkbox" />
+                    </th>
+                    <td>이용약관 및 개인정보수집 및 이용, 쇼핑정보 수신(선택)에 모두 동의합니다.</td>
+                  </tr>
+                  <tr>
+                    <th><input type="checkbox" /></th>
+                    <td>[필수] 이용약관 동의</td>
+                  </tr>
+                  <tr>
+                    <th><input type="checkbox" /></th>
+                    <td>[선택] 개인정보 처리 위탁 동의</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="table-box"><button class="btn" id="btn-join">회원가입</button></div>
+          </form>
         </div>
       </div>
     </div>
@@ -198,18 +266,30 @@
     const joinForm = document.querySelector("#join-form");
     const userId = document.querySelector("#user-id");
     const postCode = document.querySelector("#postCode");
+    const userPw = document.querySelector("#user-pw");
+    const agree = document.querySelector("#agree");
 
     btnJoin.addEventListener("click", function (e) {
+      console.log(userId.value.trim());
+      console.log(agree.checked, "====", agree.value);
       e.preventDefault();
-      if (userId.value === "") {
+      if (userId.value.trim() === "") {
         alert("아이디를 입력해 주세요.");
+        userId.value = "";
         userId.focus();
       } else if (postCode.value === "") {
         alert("우편번호를 입력해 주세요.");
         postCode.focus();
+      } else if (userPw.value === "") {
+        alert("비밀번호를 입력해 주세요.");
+        postCode.focus();
+      } else if (agree.checked === false) {
+        alert("동의에 체크해주세요.");
+        agree.focus();
       } else {
         joinForm.submit();
       }
+      console.log(3 === "3");
       //console.log(userId.value);
       //joinForm.submit();
     });
