@@ -3,35 +3,29 @@
   padding: 0;
   box-sizing: border-box;
 }
-
 ol,
 ul {
   list-style: none;
 }
-
 a {
   text-decoration: none;
   color: inherit;
 }
-
 body {
   font-family: "Noto Sans KR";
   color: #111;
   font-size: 16px;
   min-height: 2000px;
 }
-
 button {
   background: none;
   border: none;
 }
-
 .container {
   width: 1200px;
   margin-left: auto;
   margin-right: auto;
 }
-
 header {
   position: fixed;
   top: 0;
@@ -92,7 +86,6 @@ header .gnb .depth02 li a:hover {
   color: #111;
   text-decoration: underline;
 }
-
 .main-visual {
   overflow: hidden;
   height: 100vh;
@@ -139,7 +132,7 @@ header .gnb .depth02 li a:hover {
   width: 20px;
   height: 20px;
   border: 5px solid #333;
-  background-color: transparent;
+  background-color: rgba(0, 0, 0, 0);
   border-radius: 100px;
   transition: all 0.5s ease;
 }
@@ -164,7 +157,6 @@ header .gnb .depth02 li a:hover {
 .main-visual button.btn-next {
   right: 20px;
 }
-
 .banner {
   overflow: hidden;
 }
@@ -237,7 +229,6 @@ header .gnb .depth02 li a:hover {
 .banner button.btn-next {
   right: 0px;
 }
-
 .btn-top {
   width: 50px;
   height: 50px;
@@ -254,13 +245,16 @@ header .gnb .depth02 li a:hover {
   font-weight: 700;
   box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.1);
   overflow: hidden;
-  text-shadow: 1px 1px 0 #b3000e,2px 2px 0 #b3000e,3px 3px 0 #b3000e,4px 4px 0 #b3000e,5px 5px 0 #b3000e,6px 6px 0 #b3000e,7px 7px 0 #b3000e,8px 8px 0 #b3000e,9px 9px 0 #b3000e,10px 10px 0 #b3000e,11px 11px 0 #b3000e,12px 12px 0 #b3000e,13px 13px 0 #b3000e,14px 14px 0 #b3000e,15px 15px 0 #b3000e,16px 16px 0 #b3000e,17px 17px 0 #b3000e,18px 18px 0 #b3000e,19px 19px 0 #b3000e,20px 20px 0 #b3000e,21px 21px 0 #b3000e,22px 22px 0 #b3000e,23px 23px 0 #b3000e,24px 24px 0 #b3000e,25px 25px 0 #b3000e,26px 26px 0 #b3000e,27px 27px 0 #b3000e,28px 28px 0 #b3000e,29px 29px 0 #b3000e,30px 30px 0 #b3000e;;
+  text-shadow: 1px 1px 0 #b3000e, 2px 2px 0 #b3000e, 3px 3px 0 #b3000e, 4px 4px 0 #b3000e, 5px 5px 0 #b3000e, 6px 6px 0 #b3000e, 7px 7px 0 #b3000e,
+    8px 8px 0 #b3000e, 9px 9px 0 #b3000e, 10px 10px 0 #b3000e, 11px 11px 0 #b3000e, 12px 12px 0 #b3000e, 13px 13px 0 #b3000e, 14px 14px 0 #b3000e,
+    15px 15px 0 #b3000e, 16px 16px 0 #b3000e, 17px 17px 0 #b3000e, 18px 18px 0 #b3000e, 19px 19px 0 #b3000e, 20px 20px 0 #b3000e, 21px 21px 0 #b3000e,
+    22px 22px 0 #b3000e, 23px 23px 0 #b3000e, 24px 24px 0 #b3000e, 25px 25px 0 #b3000e, 26px 26px 0 #b3000e, 27px 27px 0 #b3000e, 28px 28px 0 #b3000e,
+    29px 29px 0 #b3000e, 30px 30px 0 #b3000e;
   transition: all 0.25s ease;
 }
 .btn-top.show {
   bottom: 50px;
 }
-
 .join {
   padding-top: 100px;
 }
@@ -294,12 +288,19 @@ header .gnb .depth02 li a:hover {
 .join .form-table td {
   padding: 20px;
 }
-.join .form-table td input[type=text],
-.join .form-table td input[type=password],
-.join .form-table td input[type=email],
+.join .form-table td input[type="text"],
+.join .form-table td input[type="password"],
+.join .form-table td input[type="email"],
 .join .form-table td select {
   height: 40px;
   padding: 0 20px;
+}
+.join .form-table td textarea {
+  resize: none;
+  width: 60%;
+  border: 1px solid #ccc;
+  padding: 20px;
+  font-family: inherit;
 }
 .join .form-table td .input-box {
   margin-top: 10px;
